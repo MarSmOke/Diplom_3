@@ -11,13 +11,13 @@ class TestConstructor:
         main_page.click_feed_button()
         feed_page = FeedPage(driver)
         feed_page.waiting_for_feed_page()
-        assert driver.current_url == 'https://stellarburgers.nomoreparties.site/feed'
+        assert feed_page.get_current_page() == 'https://stellarburgers.nomoreparties.site/feed'
 
     @allure.title('Go to constructor')
     def test_go_to_constructor(self, driver):
         main_page = MainPage(driver)
         main_page.click_constructor_button()
-        assert driver.current_url == 'https://stellarburgers.nomoreparties.site/'
+        assert main_page.get_current_page() == 'https://stellarburgers.nomoreparties.site/'
 
     @allure.title('Check ingredient details')
     def test_ingredient_details(self, driver):

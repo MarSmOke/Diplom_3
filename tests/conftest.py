@@ -1,6 +1,7 @@
 import pytest
 import requests
 from selenium import webdriver
+import data
 
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service as CS
@@ -8,6 +9,7 @@ from selenium.webdriver.firefox.service import Service as FS
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
+import helpers
 import data
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
@@ -33,7 +35,7 @@ def driver(request):
 
 @pytest.fixture
 def user_create_and_delete():
-    payload = data.generate_credentials()
+    payload = helpers.generate_credentials()
     response = requests.post(url='https://stellarburgers.nomoreparties.site/api/auth/register', data=payload)
     access_token = response.json()["accessToken"]
     yield payload
@@ -48,7 +50,7 @@ def user_login(driver, user_create_and_delete):
     login_page.set_email(user_create_and_delete['email'])
     login_page.set_password(user_create_and_delete['password'])
     login_page.click_login_button()
-    yield driver
+
 
 
 @pytest.fixture
@@ -62,5 +64,5 @@ def make_order(driver, user_login):
     main_page.click_order_button()
     main_page.waiting_for_order_window()
     main_page.click_close_order_button()
-    yield driver
+
 
