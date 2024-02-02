@@ -2,6 +2,7 @@ import allure
 
 from pages.main_page import MainPage
 from pages.feed_page import FeedPage
+import data
 
 
 class TestConstructor:
@@ -11,13 +12,13 @@ class TestConstructor:
         main_page.click_feed_button()
         feed_page = FeedPage(driver)
         feed_page.waiting_for_feed_page()
-        assert feed_page.get_current_page() == 'https://stellarburgers.nomoreparties.site/feed'
+        assert feed_page.get_current_page() == data.feed_url
 
     @allure.title('Go to constructor')
     def test_go_to_constructor(self, driver):
         main_page = MainPage(driver)
         main_page.click_constructor_button()
-        assert main_page.get_current_page() == 'https://stellarburgers.nomoreparties.site/'
+        assert main_page.get_current_page() == data.base_url
 
     @allure.title('Check ingredient details')
     def test_ingredient_details(self, driver):

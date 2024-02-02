@@ -76,3 +76,7 @@ class MainPage(BasePage):
     @allure.step('Add filling to the burger')
     def drag_and_drop_filling(self):
         self.drag_and_drop(MainPageLocators.FILLING, MainPageLocators.BURGER)
+
+    @allure.step('Go to the main page')
+    def go_to_main_page(self):
+        self.click_element(MainPageLocators.CONSTRUCTOR)

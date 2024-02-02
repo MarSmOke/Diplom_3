@@ -36,10 +36,10 @@ def driver(request):
 @pytest.fixture
 def user_create_and_delete():
     payload = helpers.generate_credentials()
-    response = requests.post(url='https://stellarburgers.nomoreparties.site/api/auth/register', data=payload)
+    response = requests.post(url=data.register_user_url, data=payload)
     access_token = response.json()["accessToken"]
     yield payload
-    requests.delete(url='https://stellarburgers.nomoreparties.site/api/auth/register', headers={'Authorization': access_token})
+    requests.delete(url=data.register_user_url, headers={'Authorization': access_token})
 
 
 @pytest.fixture
@@ -50,7 +50,6 @@ def user_login(driver, user_create_and_delete):
     login_page.set_email(user_create_and_delete['email'])
     login_page.set_password(user_create_and_delete['password'])
     login_page.click_login_button()
-
 
 
 @pytest.fixture

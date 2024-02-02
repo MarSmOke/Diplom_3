@@ -37,7 +37,4 @@ class FeedPage(BasePage):
     def get_today_orders(self):
         return self.get_element_text(FeedPageLocators.TODAY_ORDERS)
 
-    @allure.step('Go to the main page')
-    def go_to_main_page(self):
-        self.click_element(MainPageLocators.CONSTRUCTOR)
 
