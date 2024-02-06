@@ -1,6 +1,7 @@
 ## UI tests for Stellar Burgers
 
 Url: https://stellarburgers.nomoreparties.site/ \
+
 **Password recovery - test_password_recovery:**
 - go to the password recovery page using the “Recover Password” button,
 - enter your email and click on the “Restore” button,
