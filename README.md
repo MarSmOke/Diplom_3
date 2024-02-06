@@ -1,31 +1,31 @@
-Тесты для https://stellarburgers.nomoreparties.site/
+## UI tests for Stellar Burgers (`https://stellarburgers.nomoreparties.site/`)
 
-Восстановление пароля - test_password_recovery:
-- переход на страницу восстановления пароля по кнопке «Восстановить пароль»,
-- ввод почты и клик по кнопке «Восстановить»,
-- клик по кнопке показать/скрыть пароль делает поле активным.
+**Password recovery - test_password_recovery:**
+- go to the password recovery page using the “Recover Password” button,
+- enter your email and click on the “Restore” button,
+- clicking on the show/hide password button makes the field active.
 
-Личный кабинет - test_profile:
-- переход по клику на «Личный кабинет»,
-- переход в раздел «История заказов»,
-- выход из аккаунта.
+**Personal account - test_profile:**
+- click on “Personal Account”,
+- go to the “Order History” section,
+- log out of your account.
 
-Основной функционал конструктора - test_constructor:
-- переход по клику на «Конструктор»,
-- переход по клику на «Лента заказов»,
-- если кликнуть на ингредиент, появится всплывающее окно с деталями,
-- всплывающее окно закрывается кликом по крестику,
-- при добавлении ингредиента в заказ счётчик этого ингридиента увеличивается,
-- залогиненный пользователь может оформить заказ.
+**The main functionality of the constructor is test_constructor:**
+- click on “Constructor”,
+- click on “Order Feed”,
+- if you click on an ingredient, a pop-up window with details will appear,
+- the pop-up window can be closed by clicking on the cross,
+- when adding an ingredient to an order, the counter of this ingredient increases,
+- a logged-in user can place an order.
 
-Раздел «Лента заказов» - test_feed:
-- если кликнуть на заказ, откроется всплывающее окно с деталями,
-- заказы пользователя из раздела «История заказов» отображаются на странице «Лента заказов»,
-- при создании нового заказа счётчик Выполнено за всё время увеличивается,
-- при создании нового заказа счётчик Выполнено за сегодня увеличивается,
-- после оформления заказа его номер появляется в разделе В работе.
+**Section “Order Feed” - test_feed:**
+- if you click on an order, a pop-up window with details will open,
+- user orders from the “Order History” section are displayed on the “Order Feed” page,
+- when creating a new order, the Completed counter for all time increases,
+- when creating a new order, the Completed for today counter increases,
+- after placing an order, its number appears in the In progress section.
 
 
-Браузер выбирается в conftest в параметрах фикстуры driver: Chrome или Firefox \
-Запуск: python -m pytest tests \
-Чтение результатов запуска: allure serve allure_results
+The browser is selected in conftest in the driver fixture parameters: Chrome or Firefox\
+Running tests: python -m pytest tests\
+Reading run results: allure serve allure_results
