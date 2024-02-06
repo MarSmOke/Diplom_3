@@ -29,4 +29,4 @@
 The browser is selected in conftest in the driver fixture parameters: Chrome or Firefox\
 Running tests: python -m pytest tests\
 Reading run results: allure serve allure_results \
-Url: `https://stellarburgers.nomoreparties.site/`
+Url: https://stellarburgers.nomoreparties.site/
