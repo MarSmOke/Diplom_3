@@ -1,6 +1,6 @@
 venv
 .pytest_cache
-tests/.pytest_cache
+tests_/.pytest_cache
 .idea/
 __pycache__/
-tests/__pycache__/
+tests_/__pycache__/
