@@ -1,5 +1,6 @@
 ## UI tests for Stellar Burgers
 
+Url: https://stellarburgers.nomoreparties.site/ \
 **Password recovery - test_password_recovery:**
 - go to the password recovery page using the “Recover Password” button,
 - enter your email and click on the “Restore” button,
@@ -29,4 +30,3 @@
 The browser is selected in conftest in the driver fixture parameters: Chrome or Firefox\
 Running tests: python -m pytest tests\
 Reading run results: allure serve allure_results \
-Url: https://stellarburgers.nomoreparties.site/
